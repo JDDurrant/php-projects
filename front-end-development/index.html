@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+
+MODEL VIEW COMTROLLER
+	controllers/
+		Content.php
+		Content/
+			Mini.php
+			Mini/
+			Full.php
+			Full/
+			Comments.php
+			Comments/
+				MiniComments.php
+				FullComments.php
+			Page.php
+			Page/
+				Article.php
+				Article/
+					AboutMe.php
+					BlogEntry.php
+					BlogEntry/
+						Project.php
+						Tutorial.php
+					Blog.php
+					Blog/
+						BlogCategory.php
+			Search.php
+			Search/
+				MiniSearch.php
+				FullSearch.php
+
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JackDurrant.com</title>
+	
+<!--	<link href='https://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+	
+<!--	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+<!--	<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>-->
+	
+<!--	<link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet' type='text/css'>-->
+	<!-- Will only wever work as a heading font -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700' rel='stylesheet' type='text/css'>
+	<!-- Excellent heading font, but not good for much else -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Rosario:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<!-- I dont know if it'll make a good content font, but it's almost certainly a fine site navigation/sidebar font. I think I'd like to use it somewhere... -->
+	
+<!--	<link href='https://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>-->
+	<!-- This font only appears to come in weight 400, but I don't think that'll stop me from using it unless I find something better. -->
+	
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700' rel='stylesheet' type='text/css'>
+	<!-- Average Sans is good, but I'm not finished looking... This is one of the most popular Google fonts and I like it. -->
+	
+	<!-- While I was reviewing my options for fonts, I came across a font called Seaside Resort. While it definitely isn't for this webite, I like it and wouldn't mind using it in other projects. If I ever need it, it'll be in the downloads folder.
+	
+	 Also check out:
+	 	Fertigo Pro
+	 	Aller
+	 	Audimat (techie font, downloaded)
+	 	Code (all caps) -->
+	
+	<link rel="stylesheet" href="style.css" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<script src="fittext.js"></script>
+	
+	<script src="script.js"></script>
+	
+	<!--
+	
+	Order
+		1 Metadata
+		2 Stylesheets
+			a External fonts
+			b Main stylesheet
+			c Device-specific stylesheets
+		3 JavaScript
+			a External scripts
+			b Device-specific external scripts
+			c Plugins
+			d Site scripts
+			e Device-specific site scripts?
+	
+	-->
+</head>
+<body>
+	<div class="wrapper" id="wrapper">
+		
+		<!--
+		
+		Classes
+			- .column	
+		
+		-->
+		
+		<div class="fixed header" id="header">
+			
+			<!-- #header contains the site's title and user interface navigation, including a back button and the current page's title. -->
+			
+			<div class="section">
+				<h1 class="column small" id="site-title">JackDurrant.com</h1>
+			
+				<nav class="column large" id="ui-navigation">
+					<a id="back-button">&larr;</a>
+					Website Rebuild
+				</nav>
+				<div class="column small"></div> <!-- This empty div will help keep the website theme consistent. -->
+			</div>
+		</div>
+		
+		<div class="content" id="content">
+		
+			<!-- #content currently contains the site's navigation, current page content, sidebar and footer. This might change in the future; I might have the page content a separate div from navigation and search, or I might make all columns direct children of #wrapper. This 3-row 3-column design is harder than I thought it would be.
+			
+			UPDATE: I'm taking #footer out of #content and making it a direct child of #wrapper. The width of #content is 1200px, but the width of #footer needs to be 100%. #footer inside #content can't work. -->
+		
+			<div class="section">
+				<div class="fixed column small">
+					<ul class="site-navigation" id="site-navigation">
+						<li>Home</li>
+						<li>
+							Blog
+							<ul>
+								<li>Tech Blog</li>
+								<li>Reviews</li>
+								<li>Music</li>
+								<li>Autism</li>
+								<li>Life Blog</li>
+								<li>Archive</li>
+							</ul>
+						</li>
+						<li>Projects</li>
+						<li>Tutorials</li>
+						<li>About me</li>
+					</ul>
+
+					<div class="fixed footer" id="footer">
+						<p>Navigation footer</p>
+					</div>
+				</div>
+
+				<div class="central column large" id="central">
+				
+					<div class="pre">
+						<!-- Content before the page goes here. -->
+					
+						<span class="pre-heading">404</span>
+						
+						<p>The page you requested could not be found. This usually means one of the following:</p>
+						<ul>
+							<li>The content has been archived or deleted</li>
+							<li>You typed the address incorrectly</li>
+							<li>The server is playing up</li>
+						</ul>
+						<p>Scroll down to see related content, or <a>send an email to the webmaster</a>.</p>
+					</div>
+					
+					<div class="article">
+					
+						<!-- Remembr to try and write this in past tense - it will be published after the rebuild is done. -->
+
+						<img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Glenridding,_Cumbria,_England_-_June_2009.jpg" alt="Lake District">
+						
+						<p>This website originally used WordPress, a popular content management system used by many bloggers and web developers on many websites and blogs across the internet. WordPress is excellent for learning web developers who want a website that is easy to set up. It is also great for anyone who doesn't have time to build a website from scratch and doesn't really need to. However, it isn't perfect.</p>
+
+						<p>WordPress contains a lot of functionality that I don't use, and a lot of this functionality is implemented in an inefficient manner; this slows the website down for myself, as well as for visitors. This unnecessary functionality can also make websites difficult to customise and maintain. I noticed this a lot when I was trying to make a custom WordPress theme for it in 2012; while I managed to get something together in the end, the code was a complete mess and I couldn't get certain aspects of my theme the way I wanted them.</p>
+
+						<p>I've wanted to rebuild my website for about a year now. I'm sure I could have fixed most of my problems with WordPress, but I still wouldn't have had full control over my website. By building my own website, I was able to build my own functions, design the database and even choose what server-side programming languages I wanted to use.</p>
+						
+						<p>The main reason I didn't do this rebuild earlier is because I simply didn't know how to. Although I've known HTML and CSS for years, I've only known the basics of a couple of interpreted programming languages and databases. Some work on my computing course inspired me to experiment and learn more, but I recently took a web development evening class and got a kick start with learning how to access a MySQL database with PHP. After that, I was ready to get started.</p>
+						
+						<p>I started experimenting with PHP and MySQL on my Linux server and eventually managed to </p>
+						
+						<!-- DELETE EVERYTHING BETWEEN THIS COMMENT AND THE CLOSING DIV -->
+						
+						<p>This website originally used WordPress, a popular content management system used by many bloggers and web developers on many websites and blogs across the internet. WordPress is excellent for learning web developers who want a website that is easy to set up. It is also great for anyone who doesn't have time to build a website from scratch and doesn't really need to. However, it isn't perfect.</p>
+
+						<p>WordPress contains a lot of functionality that I don't use, and a lot of this functionality is implemented in an inefficient manner; this slows the website down for myself, as well as for visitors. This unnecessary functionality can also make websites difficult to customise and maintain. I noticed this a lot when I was trying to make a custom WordPress theme for it in 2012; while I managed to get something together in the end, the code was a complete mess and I couldn't get certain aspects of my theme the way I wanted them.</p>
+
+						<p>I've wanted to rebuild my website for about a year now. I'm sure I could have fixed most of my problems with WordPress, but I still wouldn't have had full control over my website. By building my own website, I was able to build my own functions, design the database and even choose what server-side programming languages I wanted to use.</p>
+						
+						<p>The main reason I didn't do this rebuild earlier is because I simply didn't know how to. Although I've known HTML and CSS for years, I've only known the basics of a couple of interpreted programming languages and databases. Some work on my computing course inspired me to experiment and learn more, but I recently took a web development evening class and got a kick start with learning how to access a MySQL database with PHP. After that, I was ready to get started.</p>
+						
+						<p>I started experimenting with PHP and MySQL on my Linux server and eventually managed to </p>
+
+					</div>
+					
+					<div class="fixed footer">
+						<p>Central footer</p>
+					</div>
+				</div>
+
+				<div class="sidebar fixed column small" id="sidebar">
+					<p>Sidebar</p>
+					
+					<div class="fixed footer">
+						<p>Sidebar footer</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
